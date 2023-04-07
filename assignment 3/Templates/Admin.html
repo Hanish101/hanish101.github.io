@@ -7,6 +7,7 @@
   </head>
   <body>
 
+    <!-- navbar -->
     <div class="container-fluid">
         <div class="row">
           <div class="col-2 "></div>
@@ -50,9 +51,11 @@
         <div class="row">
           <div class="col-2 bg-secondary"></div>
           <div class="col-9 m-0 p-0 bg-dark-subtle">
-            <div class="btn btn-dark d-block my-2 mx-1">
-                <a href="AdminCreate.html">Create new product</a>
-            </div>
+            <a href="AdminCreate.html">
+                <div class="btn btn-dark d-block my-2 mx-1" href="AdminCreate.html">
+                    Create new product
+                </div>
+            </a>
             <div class="container-card py-1" id="products"></div>
           </div>
           <div class="col-1 bg-secondary"></div>
@@ -60,6 +63,39 @@
     </div>
     
     <!-- Footer -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                <p>&copy; 2023 HPatil private ltd.  All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline">
+                        <li class="list-inline-item bg-secondary p-2 rounded">
+                            <a href="#">
+                                twitter
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item bg-secondary p-2 rounded">
+                            <a href="#">
+                                Linked-in
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item bg-secondary p-2 rounded">
+                            <a href="#">
+                                Mail
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
+      
     
     <script>
         const productsDiv = document.querySelector("#products");
@@ -121,9 +157,14 @@
                 productsDiv.appendChild(createProductElement(prod));
             });
         }
-    </script>
 
-    <script>
+        //open create page
+
+        function openCreate(){
+            windows.location = `AdminCreate.html`
+        }
+
+
         //Delete product
         function DeleteProd(id){
             document.getElementById(`Prod${id}`).style.display = 'none'

@@ -23,23 +23,12 @@
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav mr-auto">
                           <li class="nav-item active">
-                              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                              <a class="nav-link" href="#"><b>Home</b></a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="Admin.html">Admin</a>
                           </li>
-                          <li class="nav-item dropdown">
-                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Category
-                              </a>
-                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <button  class="dropdown-item" onclick="changeCategory('All')">All</button>
-                                  <button  class="dropdown-item" onclick="changeCategory('men\'s clothing')">mens</button>
-                                  <button  class="dropdown-item" onclick="changeCategory('women\'s clothing')">Womens</button>
-                                  <button  class="dropdown-item" onclick="changeCategory('jewelery')">jewelery</button>
-                                  <button  class="dropdown-item" onclick="changeCategory('electronics')">electronics</button>
-                              </div>
-                          </li>
+
                       </ul>
                   </div>
               </nav>
@@ -60,6 +49,39 @@
           <div class="col-1 bg-secondary"></div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                <p>&copy; 2023 HPatil private ltd.  All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline">
+                        <li class="list-inline-item bg-secondary p-2 rounded">
+                            <a href="#">
+                                twitter
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item bg-secondary p-2 rounded">
+                            <a href="#">
+                                Linked-in
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item bg-secondary p-2 rounded">
+                            <a href="#">
+                                Mail
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         const queryString = window.location.search;
@@ -91,15 +113,17 @@
             const prodDiv = document.createElement("div");
             prodDiv.innerHTML = `
             <div class="card" style="border-radius: 10px;">
-            <img class='mx-5' src="${product.image}" width= "100px" alt="Product Image">
+            <img class="mx-5" src="${product.image}" width="100px" alt="Product Image">
             <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${product.category}</h6>
                 <p class="card-text">${product.description}</p>
                 <p class="card-text">Price: $${product.price}</p>
                 <p class="card-text">Rating: ${product.rating.rate} (${product.rating.count} reviews)</p>
+                <button class="btn btn-primary" onclick="buyNow('${product.title}', ${product.price})">Buy Now</button>
             </div>
-            </div>`;
+            </div>
+            `;
             return prodDiv;
         }
 

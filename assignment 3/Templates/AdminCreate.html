@@ -47,41 +47,41 @@
                 <div class="row">
                     <div class="col form-group">
                       <label for="title">Title</label>
-                      <input type="text" class="form-control" id="title" name="title" value="this product" required>
+                      <input type="text" class="form-control" id="title" name="title"  required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-4 form-group">
                       <label for="category">Category</label>
-                      <input type="text" class="form-control" id="category" name="category" value="Mens" required>
+                      <input type="text" class="form-control" id="category" name="category" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-2 form-group">
                       <label for="price">Price</label>
-                      <input type="number" pattern="[0-9]+" class="form-control" id="price" name="price" step="0.01" value="123.23" required>
+                      <input type="number" pattern="[0-9]+" class="form-control" id="price" name="price" step="0.01" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-3 form-group">
                       <label for="rating">Rating</label>
-                      <input type="number" class="form-control" id="rating" name="rating" step="0.01" min="0" max="5" value="4.34" required>
+                      <input type="number" class="form-control" id="rating" name="rating" step="0.01" min="0" max="5" required>
                     </div>
                     <div class="col-3 form-group">
                       <label for="count">Count</label>
-                      <input type="number" class="form-control" id="count" name="count" step="1" min="1" value="4122" required>
+                      <input type="number" class="form-control" id="count" name="count" step="1" min="1" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <textarea class="form-control" id="description" name="description" rows="5" value="This is best product" ></textarea>
+                      <textarea class="form-control" id="description" name="description" rows="5"></textarea>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="form-group">
                       <label for="image">Image URL</label>
-                      <input type="text" class="form-control" id="image" name="image" value="img/thisimg.jpg" required>
+                      <input type="text" class="form-control" id="image" name="image" required>
                     </div>
                 </div>
               </form>
@@ -103,6 +103,39 @@
           </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-3">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-6 text-center text-md-start">
+              <p>&copy; 2023 HPatil private ltd.  All rights reserved.</p>
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                  <ul class="list-inline">
+                      <li class="list-inline-item bg-secondary p-2 rounded">
+                          <a href="#">
+                              twitter
+                              <i class="bi bi-twitter"></i>
+                          </a>
+                      </li>
+                      <li class="list-inline-item bg-secondary p-2 rounded">
+                          <a href="#">
+                              Linked-in
+                              <i class="bi bi-linkedin"></i>
+                          </a>
+                      </li>
+                      <li class="list-inline-item bg-secondary p-2 rounded">
+                          <a href="#">
+                              Mail
+                              <i class="bi bi-envelope"></i>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
 
     <script>
         const form = document.querySelector('form');
