@@ -1,0 +1,1 @@
+https://www.alphr.com/use-prettier-vs-code/

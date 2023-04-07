@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Mechanical Clock Replica</h1>
+    <div class="clock">
+        <br>
+        <div class="clock-face">
+            <div class="number number1">1</div>
+            <div class="number number2">2</div>
+            <div class="number number3">3</div>
+            <div class="number number4">4</div>
+            <div class="number number5">5</div>
+            <div class="number number6">6</div>
+            <div class="number number7">7</div>
+            <div class="number number8">8</div>
+            <div class="number number9">9</div>
+            <div class="number number10">10</div>
+            <div class="number number11">11</div>
+            <div class="number number12">12</div>
+
+            <div class="hand hour-hand"></div>
+            <div class="back back2"></div>
+            <div class="hand min-hand">
+                <!-- <div class="min-part"></div> -->
+            </div>
+            <div class="hand sec-hand"></div>
+            <div class="back back1"></div>
+            
+        </div>
+    </div>
+
+    <script>
+        const secondhand=document.querySelector(".sec-hand")
+        const minhand=document.querySelector(".min-hand")
+        const hourhand=document.querySelector(".hour-hand")
+
+        function setClock(count) {
+
+            const now = new Date()
+
+            const seconds = now.getSeconds()
+            const secondsDegree = ((seconds/60)*360)
+            if(secondsDegree == 354){
+                secondhand.style.transition = `none`
+                secondhand.style.transform = `translate(-50%) rotate(-6deg)`
+            }
+            else{
+                secondhand.style.transition = `0.1s`
+                secondhand.style.transform = `translate(-50%) rotate(${secondsDegree}deg)`
+            }
+            console.log(secondsDegree)
+
+            const minutes = now.getMinutes()
+            const minutesDegrees = ((minutes/60)*360) + secondsDegree/60
+            minhand.style.transform = `translate(-50%) rotate(${minutesDegrees}deg)`
+
+            const hours = now.getHours()
+            const hoursDegrees = ((hours/12)*360) + minutesDegrees/12
+            hourhand.style.transform = `translate(-50%) rotate(${hoursDegrees}deg)`
+
+        }
+        setInterval(function() {
+            setClock()
+        }, 100)
+
+        // setClock()
+    </script>
+</body>
+</html>
